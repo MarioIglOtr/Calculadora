@@ -19,9 +19,12 @@ public class CalculatorControllerImpl implements CalculatorController {
     private CalculatorService calculatorService;
 
     @Override
-    @GetMapping("/{operation}")
-    public ResponseEntity<Integer> calculate(@PathVariable final String operation) {
-        final Integer result = calculatorService.calculate(operation);
+    @GetMapping("/numero/{num1}/numero2/{num2}/operador/{operator}")
+    public ResponseEntity<Integer> calculate(
+            @PathVariable final Integer num1,
+            @PathVariable final Integer num2,
+            @PathVariable final String operator) {
+        final Integer result = calculatorService.calculate(num1, num2, operator);
 
         return ResponseEntity.ok(result);
     }
