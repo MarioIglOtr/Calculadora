@@ -7,15 +7,13 @@ import com.sanitas.domain.service.CalculatorService;
 import com.sanitas.domain.strategy.Operation;
 import com.sanitas.domain.utils.EnumArithmeticOperator;
 import lombok.NonNull;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Stream;
 
+@Service
 public class CalculatorServiceImpl implements CalculatorService {
-
-    @Autowired
-    private OperationFacade operationFacade;
 
     @Override
     public Double calculate(@NonNull final Double num1, @NonNull final Double num2, @NonNull Character operator) {
@@ -27,7 +25,7 @@ public class CalculatorServiceImpl implements CalculatorService {
 
         final List<EnumArithmeticOperator> enumArithmeticOperatorsOrderList = EnumArithmeticOperator.getOperatorsInPriorityOrder();
 
-        final Operation firstOperation = operationFacade.getOperation(enumArithmeticOperatorsOrderList.get(0));
+        final Operation firstOperation = OperationFacade.getOperation(enumArithmeticOperatorsOrderList.get(0));
         enumArithmeticOperatorsOrderList.remove(0);
 
         return firstOperation.executeOperation(enumArithmeticOperatorsOrderList, operation);
@@ -50,7 +48,7 @@ public class CalculatorServiceImpl implements CalculatorService {
             }
         }
 
-        return num1.toString() + operator.toString() + num2.toString();
+        return num1.toString() + operator.toString() + num2;
     }
 
     private boolean esOperadorValido(final Character operator) {

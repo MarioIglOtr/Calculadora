@@ -5,7 +5,7 @@ import lombok.Getter;
 public class OperatorException extends RuntimeException{
 
     @Getter
-    private String mensaje;
+    private final String mensaje;
 
     public OperatorException(final String mensaje) {
         this.mensaje = mensaje;

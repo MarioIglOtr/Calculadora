@@ -1,6 +1,5 @@
-package unittest.calculator;
+package com.sanitas.domain.service.impl;
 
-import com.sanitas.api.impl.CalculatorControllerImpl;
 import com.sanitas.domain.service.CalculatorService;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,7 +21,7 @@ public class CalculatorControllerImplUnitTest {
     final String PATH = "/calculator";
 
     @InjectMocks
-    private CalculatorControllerImpl calculatorController;
+    private CalculatorControllerImplUnitTest calculatorController;
 
     @Mock
     private CalculatorService calculatorService;

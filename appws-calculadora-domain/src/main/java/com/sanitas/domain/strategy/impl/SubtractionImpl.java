@@ -3,7 +3,6 @@ package com.sanitas.domain.strategy.impl;
 import com.sanitas.domain.facade.OperationFacade;
 import com.sanitas.domain.strategy.Operation;
 import com.sanitas.domain.utils.EnumArithmeticOperator;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
@@ -12,15 +11,12 @@ import java.util.List;
 
 public class SubtractionImpl implements Operation {
 
-    @Autowired
-    private OperationFacade operationFacade;
-
     @Override
     public double executeOperation(final List<EnumArithmeticOperator> priorityList, String operation) {
 
         Operation nxOperation = null;
         if (!CollectionUtils.isEmpty(priorityList)) {
-            nxOperation = operationFacade.getOperation(priorityList.get(0));
+            nxOperation = OperationFacade.getOperation(priorityList.get(0));
             priorityList.remove(0);
         }
 

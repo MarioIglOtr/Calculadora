@@ -1,30 +1,19 @@
-package unittest.calculator;
+package com.sanitas.domain.service.impl;
 
 import com.sanitas.domain.exception.OperatorException;
-import com.sanitas.domain.facade.OperationFacade;
 import com.sanitas.domain.service.Impl.CalculatorServiceImpl;
-import com.sanitas.domain.strategy.Operation;
-import com.sanitas.domain.utils.EnumArithmeticOperator;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import java.util.List;
-
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CalculatorServiceImplUnitTest {
 
     @InjectMocks
     private CalculatorServiceImpl calculatorService;
-
-    @Mock
-    private OperationFacade operationFacade;
 
     @Test
     public void testCalcuteBaseCaseSum() {
@@ -33,12 +22,6 @@ public class CalculatorServiceImplUnitTest {
         final Double num1 = 1.0;
         final Double num2 = 2.0;
         final Character operator = '+';
-
-        final Operation operation = Mockito.mock(Operation.class);
-        when(operationFacade.getOperation(EnumArithmeticOperator.ADDITION)).thenReturn(operation);
-
-        final List<EnumArithmeticOperator> enumArithmeticOperators = List.of(EnumArithmeticOperator.SUBTRACTION);
-        when(operation.executeOperation(enumArithmeticOperators, "1.0+2.0")).thenReturn(expected);
 
         final Double result = calculatorService.calculate(num1, num2, operator);
 
@@ -53,12 +36,6 @@ public class CalculatorServiceImplUnitTest {
         final Double num2 = 2.0;
         final Character operator = '+';
 
-        final Operation operation = Mockito.mock(Operation.class);
-        when(operationFacade.getOperation(EnumArithmeticOperator.ADDITION)).thenReturn(operation);
-
-        final List<EnumArithmeticOperator> enumArithmeticOperators = List.of(EnumArithmeticOperator.SUBTRACTION);
-        when(operation.executeOperation(enumArithmeticOperators, "1.5+2.0")).thenReturn(expected);
-
         final Double result = calculatorService.calculate(num1, num2, operator);
 
         assertEquals(expected, result);
@@ -71,12 +48,6 @@ public class CalculatorServiceImplUnitTest {
         final Double num1 = 1.0;
         final Double num2 = 2.0;
         final Character operator = '-';
-
-        final Operation operation = Mockito.mock(Operation.class);
-        when(operationFacade.getOperation(EnumArithmeticOperator.ADDITION)).thenReturn(operation);
-
-        final List<EnumArithmeticOperator> enumArithmeticOperators = List.of(EnumArithmeticOperator.SUBTRACTION);
-        when(operation.executeOperation(enumArithmeticOperators, "1.0-2.0")).thenReturn(expected);
 
         final Double result = calculatorService.calculate(num1, num2, operator);
 
@@ -91,12 +62,6 @@ public class CalculatorServiceImplUnitTest {
         final Double num2 = +2.0;
         final Character operator = '+';
 
-        final Operation operation = Mockito.mock(Operation.class);
-        when(operationFacade.getOperation(EnumArithmeticOperator.ADDITION)).thenReturn(operation);
-
-        final List<EnumArithmeticOperator> enumArithmeticOperators = List.of(EnumArithmeticOperator.SUBTRACTION);
-        when(operation.executeOperation(enumArithmeticOperators, "1.0+2.0")).thenReturn(expected);
-
         final Double result = calculatorService.calculate(num1, num2, operator);
 
         assertEquals(expected, result);
@@ -110,12 +75,6 @@ public class CalculatorServiceImplUnitTest {
         final Double num2 = -2.0;
         final Character operator = '+';
 
-        final Operation operation = Mockito.mock(Operation.class);
-        when(operationFacade.getOperation(EnumArithmeticOperator.ADDITION)).thenReturn(operation);
-
-        final List<EnumArithmeticOperator> enumArithmeticOperators = List.of(EnumArithmeticOperator.SUBTRACTION);
-        when(operation.executeOperation(enumArithmeticOperators, "-1.0-2.0")).thenReturn(expected);
-
         final Double result = calculatorService.calculate(num1, num2, operator);
 
         assertEquals(expected, result);
@@ -128,12 +87,6 @@ public class CalculatorServiceImplUnitTest {
         final Double num1 = -1.0;
         final Double num2 = -2.0;
         final Character operator = '-';
-
-        final Operation operation = Mockito.mock(Operation.class);
-        when(operationFacade.getOperation(EnumArithmeticOperator.ADDITION)).thenReturn(operation);
-
-        final List<EnumArithmeticOperator> enumArithmeticOperators = List.of(EnumArithmeticOperator.SUBTRACTION);
-        when(operation.executeOperation(enumArithmeticOperators, "-1.0+2.0")).thenReturn(expected);
 
         final Double result = calculatorService.calculate(num1, num2, operator);
 
