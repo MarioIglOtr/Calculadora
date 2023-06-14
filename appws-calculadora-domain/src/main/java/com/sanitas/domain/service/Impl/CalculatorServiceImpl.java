@@ -8,12 +8,10 @@ import com.sanitas.domain.strategy.Operation;
 import com.sanitas.domain.utils.EnumArithmeticOperator;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Stream;
 
-@Service
 public class CalculatorServiceImpl implements CalculatorService {
 
     @Autowired

@@ -5,9 +5,7 @@ import com.sanitas.domain.strategy.Operation;
 import com.sanitas.domain.strategy.impl.SubtractionImpl;
 import com.sanitas.domain.strategy.impl.SumImpl;
 import com.sanitas.domain.utils.EnumArithmeticOperator;
-import org.springframework.stereotype.Service;
 
-@Service
 public class OperationFacadeImpl implements OperationFacade {
 
     @Override

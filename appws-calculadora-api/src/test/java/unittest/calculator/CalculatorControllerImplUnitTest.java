@@ -45,9 +45,9 @@ public class CalculatorControllerImplUnitTest {
         when(calculatorService.calculate(num1, num2, operator)).thenReturn(resultOperation);
 
         mockMvc.perform(
-                MockMvcRequestBuilders.get(
-                        PATH + "/numero/{num1}/numero2/{num2}/operador/{operator}",
-                        num1, num2, operator))
+                        MockMvcRequestBuilders.get(
+                                PATH + "/num1/{num1}/num2/{num2}/operator/{operator}",
+                                num1, num2, operator))
                 .andExpect(MockMvcResultMatchers.status().isOk());
 
         verify(calculatorService).calculate(num1, num2, operator);

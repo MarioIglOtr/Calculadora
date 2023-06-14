@@ -5,7 +5,6 @@ import com.sanitas.domain.facade.impl.OperationFacadeImpl;
 import com.sanitas.domain.strategy.Operation;
 import com.sanitas.domain.utils.EnumArithmeticOperator;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
@@ -13,7 +12,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.regex.Pattern;
 
-@Service
 public class SumImpl implements Operation {
 
     @Autowired
