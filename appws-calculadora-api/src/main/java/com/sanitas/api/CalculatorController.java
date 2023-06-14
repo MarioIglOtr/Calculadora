@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 public interface CalculatorController {
 
-    @GetMapping("numero/{num1}/numero2/{num2}/operador/{operator}")
-    ResponseEntity<Integer> calculate(
-            @PathVariable Integer num1,
-            @PathVariable Integer num2,
+
+    @GetMapping("/numero/{num1}/numero2/{num2}/operador/{operator}")
+    ResponseEntity<Double> calculate(
+            @PathVariable Double num1,
+            @PathVariable Double num2,
             @PathVariable String operator);
 }

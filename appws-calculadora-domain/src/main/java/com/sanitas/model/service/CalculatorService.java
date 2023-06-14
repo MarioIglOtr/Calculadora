@@ -1,5 +1,7 @@
 package com.sanitas.model.service;
 
+import lombok.NonNull;
+
 public interface CalculatorService {
-    Integer calculate(Integer num1, Integer num2, String operator);
+    Double calculate(@NonNull Double num1, @NonNull Double num2, @NonNull String operator);
 }

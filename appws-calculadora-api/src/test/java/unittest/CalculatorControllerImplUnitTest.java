@@ -37,14 +37,17 @@ public class CalculatorControllerImplUnitTest {
     @Test
     public void testFindSimilarProductsByProductId() throws Exception {
 
-        final Integer num1 = 1;
-        final Integer num2 = 2;
+        final Double num1 = 1.0;
+        final Double num2 = 2.0;
         final String operator = "+";
-        final Integer resultOperation = 3;
+        final Double resultOperation = 3.0;
 
         when(calculatorService.calculate(num1, num2, operator)).thenReturn(resultOperation);
 
-        mockMvc.perform(MockMvcRequestBuilders.get(PATH + "/numero/{num1}/numero2/{num2}/operador/{operator}", num1, num2, operator))
+        mockMvc.perform(
+                MockMvcRequestBuilders.get(
+                        PATH + "/numero/{num1}/numero2/{num2}/operador/{operator}",
+                        num1, num2, operator))
                 .andExpect(MockMvcResultMatchers.status().isOk());
 
         verify(calculatorService).calculate(num1, num2, operator);

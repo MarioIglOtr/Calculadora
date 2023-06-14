@@ -13,8 +13,10 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes={com.sanitas.CalculadoraApplication.class})
 public class CalculatorControllerTest {
+
+    final String PATH = "/calculator";
 
     @Autowired
     private TestRestTemplate restTemplate;
@@ -23,12 +25,14 @@ public class CalculatorControllerTest {
     public void testCalculate() {
         final Integer expected = 3;
 
-        final String operation = "1+2";
+        final Double num1 = 1.0;
+        final Double num2 = 2.0;
+        final String operator = "+";
 
         final ResponseEntity<Integer> responseEntity = restTemplate.getForEntity(
-                "/calculator/{operation}",
+                PATH + "/numero/{num1}/numero2/{num2}/operador/{operator}",
                 Integer.class,
-                operation);
+                num1, num2, operator);
 
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
         assertNotNull(responseEntity.getBody());
