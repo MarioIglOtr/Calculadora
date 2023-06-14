@@ -10,8 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = {com.sanitas.CalculadoraApplication.class})
@@ -25,7 +25,7 @@ public class CalculatorControllerTest {
 
     @Test
     public void testCalculateSum() {
-        final Integer expected = 3;
+        final Double expected = 3.0;
 
         final Double num1 = 1.0;
         final Double num2 = 2.0;
@@ -43,15 +43,15 @@ public class CalculatorControllerTest {
 
     @Test
     public void testCalculateSub() {
-        final Integer expected = 3;
+        final Double expected = 3.0;
 
         final Double num1 = 1.0;
         final Double num2 = 2.0;
         final String operator = "+";
 
-        final ResponseEntity<Integer> responseEntity = restTemplate.getForEntity(
+        final ResponseEntity<Double> responseEntity = restTemplate.getForEntity(
                 PATH + "/num1/{num1}/num2/{num2}/operator/{operator}",
-                Integer.class,
+                Double.class,
                 num1, num2, operator);
 
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
@@ -61,15 +61,15 @@ public class CalculatorControllerTest {
 
     @Test
     public void testCalculate() {
-        final Integer expected = -3;
+        final Double expected = -3.0;
 
         final Double num1 = -1.0;
         final Double num2 = -2.0;
         final String operator = "+";
 
-        final ResponseEntity<Integer> responseEntity = restTemplate.getForEntity(
+        final ResponseEntity<Double> responseEntity = restTemplate.getForEntity(
                 PATH + "/num1/{num1}/num2/{num2}/operator/{operator}",
-                Integer.class,
+                Double.class,
                 num1, num2, operator);
 
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
