@@ -1,7 +1,7 @@
-package unittest;
+package unittest.calculator;
 
 import com.sanitas.api.impl.CalculatorControllerImpl;
-import com.sanitas.model.service.CalculatorService;
+import com.sanitas.domain.service.CalculatorService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -39,7 +39,7 @@ public class CalculatorControllerImplUnitTest {
 
         final Double num1 = 1.0;
         final Double num2 = 2.0;
-        final String operator = "+";
+        final Character operator = '+';
         final Double resultOperation = 3.0;
 
         when(calculatorService.calculate(num1, num2, operator)).thenReturn(resultOperation);

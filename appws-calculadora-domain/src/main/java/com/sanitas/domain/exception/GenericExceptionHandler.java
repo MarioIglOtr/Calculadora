@@ -1,4 +1,4 @@
-package com.sanitas.model.exception;
+package com.sanitas.domain.exception;
 
 import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;

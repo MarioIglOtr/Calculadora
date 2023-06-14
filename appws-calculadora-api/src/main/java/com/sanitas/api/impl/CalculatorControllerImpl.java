@@ -2,7 +2,7 @@ package com.sanitas.api.impl;
 
 import com.sanitas.api.CalculatorController;
 
-import com.sanitas.model.service.CalculatorService;
+import com.sanitas.domain.service.CalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +23,7 @@ public class CalculatorControllerImpl implements CalculatorController {
     public ResponseEntity<Double> calculate(
             @PathVariable final Double num1,
             @PathVariable final Double num2,
-            @PathVariable final String operator) {
+            @PathVariable final Character operator) {
         final Double result = calculatorService.calculate(num1, num2, operator);
 
         return ResponseEntity.ok(result);

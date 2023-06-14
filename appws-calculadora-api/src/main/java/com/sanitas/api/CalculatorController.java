@@ -11,5 +11,5 @@ public interface CalculatorController {
     ResponseEntity<Double> calculate(
             @PathVariable Double num1,
             @PathVariable Double num2,
-            @PathVariable String operator);
+            @PathVariable Character operator);
 }

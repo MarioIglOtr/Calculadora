@@ -22,7 +22,7 @@ public class CalculatorControllerTest {
     private TestRestTemplate restTemplate;
 
     @Test
-    public void testCalculate() {
+    public void testCalculateSum() {
         final Integer expected = 3;
 
         final Double num1 = 1.0;
@@ -38,4 +38,41 @@ public class CalculatorControllerTest {
         assertNotNull(responseEntity.getBody());
         assertEquals(expected, responseEntity.getBody());
     }
+
+    @Test
+    public void testCalculateSub() {
+        final Integer expected = 3;
+
+        final Double num1 = 1.0;
+        final Double num2 = 2.0;
+        final String operator = "+";
+
+        final ResponseEntity<Integer> responseEntity = restTemplate.getForEntity(
+                PATH + "/numero/{num1}/numero2/{num2}/operador/{operator}",
+                Integer.class,
+                num1, num2, operator);
+
+        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
+        assertNotNull(responseEntity.getBody());
+        assertEquals(expected, responseEntity.getBody());
+    }
+
+    @Test
+    public void testCalculate() {
+        final Integer expected = -3;
+
+        final Double num1 = -1.0;
+        final Double num2 = -2.0;
+        final String operator = "+";
+
+        final ResponseEntity<Integer> responseEntity = restTemplate.getForEntity(
+                PATH + "/numero/{num1}/numero2/{num2}/operador/{operator}",
+                Integer.class,
+                num1, num2, operator);
+
+        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
+        assertNotNull(responseEntity.getBody());
+        assertEquals(expected, responseEntity.getBody());
+    }
+
 }
