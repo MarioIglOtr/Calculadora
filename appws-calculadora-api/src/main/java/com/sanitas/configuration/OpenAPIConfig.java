@@ -22,7 +22,7 @@ public class OpenAPIConfig {
     private String PORT;
 
     @Bean
-    public OpenAPI myOpenAPI() {
+    public OpenAPI swaggerConfiguration() {
         final Server devServer = new Server();
         devServer.setUrl(SCHEME + "://" + HOST + ":"+ PORT);
         devServer.setDescription("Server URL in Development environment");

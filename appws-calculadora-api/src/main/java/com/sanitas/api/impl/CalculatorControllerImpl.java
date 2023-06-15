@@ -26,7 +26,7 @@ public class CalculatorControllerImpl implements CalculatorController {
     @Override
     @Operation(
             summary = "Calculate result os operation",
-            description = "Perform addition and subtraction operations.")
+            description = "Perform addition(+) and subtraction operations(-).")
     @ApiResponses({@ApiResponse(responseCode = "200", content = {@Content(schema = @Schema(implementation = double.class))})})
     public ResponseEntity<Double> calculate(
             @PathVariable final double num1,

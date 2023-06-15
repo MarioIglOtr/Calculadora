@@ -9,6 +9,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class OperationFacade {
 
+    /**
+     * Obtiene una instancia de la interfaz Operation según el operador aritmético proporcionado.
+     *
+     * @param enumArithmeticOperator El operador aritmético.
+     * @return Una instancia de la interfaz Operation correspondiente al operador aritmético.
+     */
     public static Operation getOperation(final EnumArithmeticOperator enumArithmeticOperator) {
         return switch (EnumArithmeticOperator.valueOf(enumArithmeticOperator.name())) {
             case ADDITION -> new SumImpl();

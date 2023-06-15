@@ -15,6 +15,15 @@ import java.util.stream.Stream;
 public class CalculatorServiceImpl implements CalculatorService {
 
 
+    /**
+     * Realiza un cálculo aritmético utilizando los números y el operador especificados.
+     *
+     * @param num1     El primer número de la operación.
+     * @param num2     El segundo número de la operación.
+     * @param operator El operador aritmético.
+     * @return El resultado del cálculo aritmético.
+     * @throws OperatorException Si el operador especificado no es válido.
+     */
     @Override
     public double calculate(final double num1, final double num2, char operator) {
 
@@ -35,6 +44,16 @@ public class CalculatorServiceImpl implements CalculatorService {
         return resutl;
     }
 
+
+    /**
+     * Transforma una operación aritmética en una cadena de texto. Si encuentra un numero negativo en la segunda
+     * posición modifica el operador para simplificar el resultado
+     *
+     * @param num1     El primer número de la operación.
+     * @param num2     El segundo número de la operación.
+     * @param operator El operador aritmético.
+     * @return La representación en texto de la operación aritmética.
+     */
     private String transformarOperacion(final Double num1, Double num2, Character operator) {
         boolean cambiarOperador = false;
         if (num2 < 0.0) {
@@ -55,6 +74,12 @@ public class CalculatorServiceImpl implements CalculatorService {
         return num1.toString() + operator.toString() + num2;
     }
 
+    /**
+     * Verifica si un operador aritmético es válido.
+     *
+     * @param operator El operador aritmético a verificar.
+     * @return true si el operador es válido, false de lo contrario.
+     */
     private boolean esOperadorValido(final Character operator) {
 
         return Stream.of(EnumArithmeticOperator.values())

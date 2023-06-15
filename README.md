@@ -54,3 +54,8 @@ Correcto:
 Error:
 
 - http://localhost:8080/calculator/num1/1.0/num2/1.0/operator/*
+
+### Swagger
+Se han documentado los endpoints con swagger.  
+
+http://localhost:8080/swagger-ui/index.html#/
