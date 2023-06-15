@@ -1,4 +1,4 @@
-package com.sanitas.domain.service.impl;
+package com.sanitas.api.impl;
 
 import com.sanitas.domain.exception.OperatorException;
 import com.sanitas.domain.service.Impl.CalculatorServiceImpl;

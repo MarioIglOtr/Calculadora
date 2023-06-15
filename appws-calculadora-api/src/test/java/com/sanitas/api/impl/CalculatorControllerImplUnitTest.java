@@ -1,4 +1,4 @@
-package com.sanitas.domain.service.impl;
+package com.sanitas.api.impl;
 
 import com.sanitas.domain.service.CalculatorService;
 import org.junit.Before;
