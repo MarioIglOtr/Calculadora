@@ -23,7 +23,7 @@ public class SubtractionImpl implements Operation {
         if (operation.charAt(0) == EnumArithmeticOperator.SUBTRACTION.getSymbol()) {
             operation = "0" + operation;
         }
-        List<String> restas = new ArrayList<>();
+        final List<String> restas = new ArrayList<>();
         Collections.addAll(restas, operation.split(EnumArithmeticOperator.SUBTRACTION.getSymbol().toString()));
 
         double res = Double.parseDouble(restas.get(0));

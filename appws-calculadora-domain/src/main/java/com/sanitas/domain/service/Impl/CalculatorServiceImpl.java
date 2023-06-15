@@ -6,8 +6,6 @@ import com.sanitas.domain.facade.OperationFacade;
 import com.sanitas.domain.service.CalculatorService;
 import com.sanitas.domain.strategy.Operation;
 import com.sanitas.domain.utils.EnumArithmeticOperator;
-//import io.corp.calculator.TracerImpl;
-import lombok.NonNull;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,7 +16,7 @@ public class CalculatorServiceImpl implements CalculatorService {
 
 
     @Override
-    public Double calculate(@NonNull final Double num1, @NonNull final Double num2, @NonNull Character operator) {
+    public double calculate(final double num1, final double num2, char operator) {
 
 //        final TracerImpl tracerAPI = new TracerImpl();
 

@@ -10,7 +10,7 @@ public interface CalculatorController {
 
     @GetMapping("/num1/{num1}/num2/{num2}/operator/{operator}")
     ResponseEntity<Double> calculate(
-            @PathVariable Double num1,
-            @PathVariable Double num2,
-            @PathVariable Character operator);
+            @PathVariable double num1,
+            @PathVariable double num2,
+            @PathVariable char operator);
 }

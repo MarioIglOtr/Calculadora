@@ -19,9 +19,9 @@ public class CalculatorServiceImplUnitTest {
     public void testCalcuteBaseCaseSum() {
         final Double expected = 3.0;
 
-        final Double num1 = 1.0;
-        final Double num2 = 2.0;
-        final Character operator = '+';
+        final double num1 = 1.0;
+        final double num2 = 2.0;
+        final char operator = '+';
 
         final Double result = calculatorService.calculate(num1, num2, operator);
 
@@ -32,9 +32,9 @@ public class CalculatorServiceImplUnitTest {
     public void testCalculateDecimals() {
         final Double expected = 3.5;
 
-        final Double num1 = 1.5;
-        final Double num2 = 2.0;
-        final Character operator = '+';
+        final double num1 = 1.5;
+        final double num2 = 2.0;
+        final char operator = '+';
 
         final Double result = calculatorService.calculate(num1, num2, operator);
 
@@ -45,9 +45,9 @@ public class CalculatorServiceImplUnitTest {
     public void testCalcuteBaseCaseDif() {
         final Double expected = -1.0;
 
-        final Double num1 = 1.0;
-        final Double num2 = 2.0;
-        final Character operator = '-';
+        final double num1 = 1.0;
+        final double num2 = 2.0;
+        final char operator = '-';
 
         final Double result = calculatorService.calculate(num1, num2, operator);
 
@@ -58,9 +58,9 @@ public class CalculatorServiceImplUnitTest {
     public void testCalcualteSumPositiveNums() {
         final Double expected = 3.0;
 
-        final Double num1 = +1.0;
-        final Double num2 = +2.0;
-        final Character operator = '+';
+        final double num1 = +1.0;
+        final double num2 = +2.0;
+        final char operator = '+';
 
         final Double result = calculatorService.calculate(num1, num2, operator);
 
@@ -71,9 +71,9 @@ public class CalculatorServiceImplUnitTest {
     public void testCalcualteSumNegativeNums() {
         final Double expected = -3.0;
 
-        final Double num1 = -1.0;
-        final Double num2 = -2.0;
-        final Character operator = '+';
+        final double num1 = -1.0;
+        final double num2 = -2.0;
+        final char operator = '+';
 
         final Double result = calculatorService.calculate(num1, num2, operator);
 
@@ -84,9 +84,9 @@ public class CalculatorServiceImplUnitTest {
     public void testCalcualteDifNegativeNums() {
         final Double expected = 1.0;
 
-        final Double num1 = -1.0;
-        final Double num2 = -2.0;
-        final Character operator = '-';
+        final double num1 = -1.0;
+        final double num2 = -2.0;
+        final char operator = '-';
 
         final Double result = calculatorService.calculate(num1, num2, operator);
 
@@ -96,9 +96,9 @@ public class CalculatorServiceImplUnitTest {
     @Test(expected = OperatorException.class)
     public void testCalcualteNonValidOperator() {
 
-        final Double num1 = -1.0;
-        final Double num2 = -2.0;
-        final Character operator = '*';
+        final double num1 = -1.0;
+        final double num2 = -2.0;
+        final char operator = '*';
 
         calculatorService.calculate(num1, num2, operator);
 
@@ -107,9 +107,9 @@ public class CalculatorServiceImplUnitTest {
     @Test(expected = OperatorException.class)
     public void testCalcualteNonEmptyOpertor() {
 
-        final Double num1 = -1.0;
-        final Double num2 = -2.0;
-        final Character operator = ' ';
+        final double num1 = -1.0;
+        final double num2 = -2.0;
+        final char operator = ' ';
 
         calculatorService.calculate(num1, num2, operator);
 

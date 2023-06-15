@@ -17,10 +17,10 @@ public class CalculatorControllerImpl implements CalculatorController {
 
     @Override
     public ResponseEntity<Double> calculate(
-            @PathVariable final Double num1,
-            @PathVariable final Double num2,
-            @PathVariable final Character operator) {
-        final Double result = calculatorService.calculate(num1, num2, operator);
+            @PathVariable final double num1,
+            @PathVariable final double num2,
+            @PathVariable final char operator) {
+        final double result = calculatorService.calculate(num1, num2, operator);
 
         return ResponseEntity.ok(result);
     }

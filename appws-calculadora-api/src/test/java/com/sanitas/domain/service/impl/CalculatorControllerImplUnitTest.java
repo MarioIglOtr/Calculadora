@@ -36,10 +36,10 @@ public class CalculatorControllerImplUnitTest {
     @Test
     public void testFindSimilarProductsByProductId() throws Exception {
 
-        final Double num1 = 1.0;
-        final Double num2 = 2.0;
-        final Character operator = '+';
-        final Double resultOperation = 3.0;
+        final double num1 = 1.0;
+        final double num2 = 2.0;
+        final char operator = '+';
+        final double resultOperation = 3.0;
 
         when(calculatorService.calculate(num1, num2, operator)).thenReturn(resultOperation);
 

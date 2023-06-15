@@ -3,5 +3,5 @@ package com.sanitas.domain.service;
 import lombok.NonNull;
 
 public interface CalculatorService {
-    Double calculate(@NonNull Double num1, @NonNull Double num2, @NonNull Character operator);
+    double calculate(double num1, double num2, char operator);
 }
