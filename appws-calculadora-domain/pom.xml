@@ -11,12 +11,15 @@
 
     <artifactId>appws-calculadora-domain</artifactId>
     <name>${project.groupId}:${project.artifactId}</name>
+    <dependencies>
+        <dependency>
+            <groupId>io.corp</groupId>
+            <artifactId>calculator</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/../../Back/PruebaTecnicaSanitas_Back/test4/tracer-1.0.0.jar</systemPath>
+        </dependency>
+    </dependencies>
     <packaging>jar</packaging>
-
-    <properties>
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
 </project>

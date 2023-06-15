@@ -6,6 +6,7 @@ import com.sanitas.domain.facade.OperationFacade;
 import com.sanitas.domain.service.CalculatorService;
 import com.sanitas.domain.strategy.Operation;
 import com.sanitas.domain.utils.EnumArithmeticOperator;
+//import io.corp.calculator.TracerImpl;
 import lombok.NonNull;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +16,11 @@ import java.util.stream.Stream;
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
 
+
     @Override
     public Double calculate(@NonNull final Double num1, @NonNull final Double num2, @NonNull Character operator) {
+
+//        final TracerImpl tracerAPI = new TracerImpl();
 
         if (!esOperadorValido(operator)) {
             throw new OperatorException("Invalid operator: " + operator);
@@ -28,7 +32,9 @@ public class CalculatorServiceImpl implements CalculatorService {
         final Operation firstOperation = OperationFacade.getOperation(enumArithmeticOperatorsOrderList.get(0));
         enumArithmeticOperatorsOrderList.remove(0);
 
-        return firstOperation.executeOperation(enumArithmeticOperatorsOrderList, operation);
+        double resutl = firstOperation.executeOperation(enumArithmeticOperatorsOrderList, operation);
+//        tracerAPI.trace(resutl);
+        return resutl;
     }
 
     private String transformarOperacion(final Double num1, Double num2, Character operator) {
