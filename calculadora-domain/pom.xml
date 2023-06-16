@@ -5,21 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.sanitas</groupId>
-        <artifactId>Calculadora</artifactId>
+        <artifactId>calculadora</artifactId>
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>appws-calculadora-domain</artifactId>
+    <artifactId>calculadora-domain</artifactId>
     <name>${project.groupId}:${project.artifactId}</name>
-    <dependencies>
-        <dependency>
-            <groupId>io.corp</groupId>
-            <artifactId>tracer</artifactId>
-            <version>1.0.0</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/../lib/tracer-1.0.0.jar</systemPath>
-        </dependency>
-    </dependencies>
     <packaging>jar</packaging>
-
 </project>

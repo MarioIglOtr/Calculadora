@@ -5,22 +5,22 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.sanitas</groupId>
-        <artifactId>Calculadora</artifactId>
+        <artifactId>calculadora</artifactId>
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>appws-calculadora-boot</artifactId>
+    <artifactId>calculadora-boot</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>com.sanitas</groupId>
-            <artifactId>appws-calculadora-domain</artifactId>
+            <artifactId>calculadora-domain</artifactId>
             <version>1.0.0</version>
         </dependency>
 
         <dependency>
             <groupId>com.sanitas</groupId>
-            <artifactId>appws-calculadora-api</artifactId>
+            <artifactId>calculadora-api</artifactId>
             <version>1.0.0</version>
         </dependency>
 
@@ -29,12 +29,12 @@
             <artifactId>spring-test</artifactId>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-test</artifactId>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>

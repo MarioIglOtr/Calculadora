@@ -2,11 +2,6 @@ package com.sanitas.api.impl;
 
 import com.sanitas.api.CalculatorController;
 import com.sanitas.domain.service.Impl.CalculatorService;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,10 +19,6 @@ public class CalculatorControllerImpl implements CalculatorController {
     private CalculatorService calculatorService;
 
     @Override
-    @Operation(
-            summary = "Calculate result os operation",
-            description = "Perform addition(+) and subtraction operations(-).")
-    @ApiResponses({@ApiResponse(responseCode = "200", content = {@Content(schema = @Schema(implementation = double.class))})})
     public ResponseEntity<Double> calculate(
             @PathVariable final double num1,
             @PathVariable final double num2,

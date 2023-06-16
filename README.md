@@ -38,8 +38,8 @@ Es necesario añadir la librería externa al proyecto.
 Comando Maven:
 clean install
 
-Ejecucion:
-java -jar .\appws-calculadora-boot\target\appws-calculadora-boot-1.0.0.jar
+Ejecución:
+java -jar .\calculadora-boot\target\calculadora-boot-1.0.0.jar
 
 ### Pruebas
 
@@ -49,7 +49,7 @@ peticiones GET.
 Correcto:
 
 - http://localhost:8080/calculator/num1/1.0/num2/1.0/operator/+
-- http://localhost:8080/calculator/num1/1.0/num2/1.0/operator/
+- http://localhost:8080/calculator/num1/1.0/num2/1.0/operator/-
 
 Error:
 

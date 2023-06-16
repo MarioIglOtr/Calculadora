@@ -9,15 +9,15 @@
         <relativePath/>
     </parent>
     <groupId>com.sanitas</groupId>
-    <artifactId>Calculadora</artifactId>
+    <artifactId>calculadora</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>Calculadora</name>
     <description>Microservicio &apos;Calculadora&apos; para realizar operaciones aritméticas.</description>
     <modules>
-        <module>appws-calculadora-api</module>
-        <module>appws-calculadora-domain</module>
-        <module>appws-calculadora-boot</module>
+        <module>calculadora-api</module>
+        <module>calculadora-domain</module>
+        <module>calculadora-boot</module>
     </modules>
     <properties>
         <java.version>19</java.version>
@@ -51,6 +51,13 @@
             <artifactId>mockito-core</artifactId>
             <version>5.2.0</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.corp.calculator</groupId>
+            <artifactId>tracer</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>

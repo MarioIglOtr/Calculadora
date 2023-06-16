@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.sanitas</groupId>
-        <artifactId>Calculadora</artifactId>
+        <artifactId>calculadora</artifactId>
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>appws-calculadora-api</artifactId>
+    <artifactId>calculadora-api</artifactId>
     <name>${project.groupId}:${project.artifactId}</name>
 
     <properties>
@@ -21,7 +21,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>appws-calculadora-domain</artifactId>
+            <artifactId>calculadora-domain</artifactId>
             <version>${project.version}</version>
         </dependency>
 
@@ -36,7 +36,6 @@
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
             <version>2.1.0</version>
         </dependency>
-
     </dependencies>
 
 </project>
