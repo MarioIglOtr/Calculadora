@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Implementación de un microservicio que expone un API que debe ser capaz, a partir de 3 parámetros de entrada realizar operaciones aritméticas. Al ser una versión POC, sólo será capaz de realizar sumas y restas de dos elementos, aunque se prevé que en futuras versiones haya otros tipos de operaciones y de mayor complejidad.
+Implementación de un microservicio que expone una API que debe ser capaz, a partir de 3 parámetros de entrada realizar operaciones aritméticas. Al ser una versión POC, sólo será capaz de realizar sumas y restas de dos elementos, aunque se prevé que en futuras versiones haya otros tipos de operaciones y de mayor complejidad.
 
 ## Endpoint
 
@@ -18,7 +18,11 @@ Descripción: Devuelve el resultado de una operación entre dos números.
 
 ### Realizar operación entre dos números
 
-productId: (obligatorio) ID del producto del que se desean obtener los productos similares.
+num1: (obligatorio) Primer operando.
+
+num2: (obligatorio) Segundo operando.
+
+operator: (obligatorio) Operador.
 
 ## Respuestas
 
@@ -26,20 +30,21 @@ productId: (obligatorio) ID del producto del que se desean obtener los productos
 
 200 OK: Devuelve el resultado de la operación
 
-404 Not Found: Si la operación no se puede realizar
+400 Bad Request: Operador desconocido
 
 500 Internal Server Error: Si hay un error interno en el servidor.
 
 ## Ejecución
 
-Las librerías necesarias para realizar la ejecución se encuentran en /lib.
-Es necesario añadir la librería externa al proyecto.
+Las librerías externas necesarias para realizar la ejecución se encuentran en /lib.
+
+Gestión de librerías con Maven y ejecución y compilación con Java 19.0.2
 
 Comando Maven:
-clean install
+**-clean install**
 
 Ejecución:
-java -jar .\calculadora-boot\target\calculadora-boot-1.0.0.jar
+**java -jar .\calculadora-boot\target\calculadora-boot-1.0.0.jar**
 
 ### Pruebas
 
