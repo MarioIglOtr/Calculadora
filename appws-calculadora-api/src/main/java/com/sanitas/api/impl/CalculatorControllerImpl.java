@@ -1,7 +1,7 @@
 package com.sanitas.api.impl;
 
 import com.sanitas.api.CalculatorController;
-import com.sanitas.domain.service.CalculatorService;
+import com.sanitas.domain.service.Impl.CalculatorService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

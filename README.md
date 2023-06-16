@@ -36,7 +36,7 @@ Las librerías necesarias para realizar la ejecución se encuentran en /lib.
 Es necesario añadir la librería externa al proyecto.
 
 Comando Maven:
-clean install install:install-file -Dfile=${basedir}/lib/tracer-1.0.0.jar -DgroupId=io.corp -DartifactId=calculator -Dversion=1.0 -Dpackaging=jar
+clean install
 
 Ejecucion:
 java -jar .\appws-calculadora-boot\target\appws-calculadora-boot-1.0.0.jar

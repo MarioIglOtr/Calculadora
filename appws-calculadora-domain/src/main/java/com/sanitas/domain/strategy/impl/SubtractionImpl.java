@@ -34,18 +34,20 @@ public class SubtractionImpl implements Operation {
         final List<String> restas = new ArrayList<>();
         Collections.addAll(restas, operation.split(EnumArithmeticOperator.SUBTRACTION.getSymbol().toString()));
 
-        double res = Double.parseDouble(restas.get(0));
-        if (restas.size() == 1) {
-            return Double.parseDouble(restas.get(0));
-        }
-        for (int i = 1; i < restas.size(); i++) {
-            if (nxOperation == null) {
-                res -= Double.parseDouble(restas.get(i));
-            } else {
-                res -= nxOperation.executeOperation(priorityList, restas.get(i));
+        double result = Double.parseDouble(restas.get(0));
+        if (restas.size() != 1) {
+
+            for (int i = 1; i < restas.size(); i++) {
+                if (nxOperation == null) {
+                    result -= Double.parseDouble(restas.get(i));
+                } else {
+                    result -= nxOperation.executeOperation(priorityList, restas.get(i));
+                }
+                log.trace(result);
             }
         }
-        return res;
+
+        return result;
 
     }
 }

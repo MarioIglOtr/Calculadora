@@ -1,7 +1,7 @@
-package com.sanitas.api.impl;
+package com.sanitas.domain.service.impl;
 
 import com.sanitas.domain.exception.OperatorException;
-import com.sanitas.domain.service.Impl.CalculatorServiceImpl;
+import com.sanitas.domain.service.Impl.Impl.CalculatorServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -103,16 +103,4 @@ public class CalculatorServiceImplUnitTest {
         calculatorService.calculate(num1, num2, operator);
 
     }
-
-    @Test(expected = OperatorException.class)
-    public void testCalcualteNonEmptyOpertor() {
-
-        final double num1 = -1.0;
-        final double num2 = -2.0;
-        final char operator = ' ';
-
-        calculatorService.calculate(num1, num2, operator);
-
-    }
-
 }

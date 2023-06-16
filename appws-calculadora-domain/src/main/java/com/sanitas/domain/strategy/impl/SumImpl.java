@@ -40,8 +40,8 @@ public class SumImpl implements Operation {
             } else {
                 result += nxOperation.executeOperation(priorityList, op);
             }
+            log.trace(result);
         }
-
         return result;
     }
 }

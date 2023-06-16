@@ -1,9 +1,9 @@
-package com.sanitas.domain.service.Impl;
+package com.sanitas.domain.service.Impl.Impl;
 
 
 import com.sanitas.domain.exception.OperatorException;
 import com.sanitas.domain.facade.OperationFacade;
-import com.sanitas.domain.service.CalculatorService;
+import com.sanitas.domain.service.Impl.CalculatorService;
 import com.sanitas.domain.strategy.Operation;
 import com.sanitas.domain.utils.EnumArithmeticOperator;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,6 @@ import java.util.stream.Stream;
 
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
-
 
     /**
      * Realiza un cálculo aritmético utilizando los números y el operador especificados.
@@ -26,9 +25,6 @@ public class CalculatorServiceImpl implements CalculatorService {
      */
     @Override
     public double calculate(final double num1, final double num2, char operator) {
-
-//        final TracerImpl tracerAPI = new TracerImpl();
-
         if (!esOperadorValido(operator)) {
             throw new OperatorException("Invalid operator: " + operator);
         }
@@ -39,9 +35,7 @@ public class CalculatorServiceImpl implements CalculatorService {
         final Operation firstOperation = OperationFacade.getOperation(enumArithmeticOperatorsOrderList.get(0));
         enumArithmeticOperatorsOrderList.remove(0);
 
-        double resutl = firstOperation.executeOperation(enumArithmeticOperatorsOrderList, operation);
-//        tracerAPI.trace(resutl);
-        return resutl;
+        return firstOperation.executeOperation(enumArithmeticOperatorsOrderList, operation);
     }
 
 

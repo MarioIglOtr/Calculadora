@@ -1,6 +1,6 @@
 package com.sanitas.api.impl;
 
-import com.sanitas.domain.service.CalculatorService;
+import com.sanitas.domain.service.Impl.CalculatorService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -16,6 +16,4 @@ public class GenericExceptionHandler extends RuntimeException {
     public ResponseEntity<String> handleNotFoundException(OperatorException ex) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
     }
-
-
 }
